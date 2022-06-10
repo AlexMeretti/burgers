@@ -1,0 +1,134 @@
+.block {
+  text-align: center;
+}
+.button1 {
+  border: 0px;
+  font-weight: bold;
+  margin-top: 10px;
+  background-color: #502314;
+  color: white;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  text-decoration: none;
+}
+.headButtons {
+  a {
+    @extend .button1;
+  }
+  .goHome {
+    float: left;
+  }
+  .nextBurger {
+    float: right;
+  }
+}
+.burgerGrid {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "image title"
+    "image price";
+  align-items: center;
+  width: 100%;
+  .image {
+    grid-area: image;
+    img {
+      width: 80%;
+      margin: 10px 0;
+    }
+  }
+  .title {
+    grid-area: title;
+    text-align: left;
+    p {
+      font-size: 20px;
+      font-weight: bold;
+      color: #502314;
+      margin: 0px;
+    }
+  }
+  .price {
+    grid-area: price;
+    text-align: left;
+    p {
+      margin: 0px;
+      span {
+        background-color: #ff8720;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-weight: bold;
+        color: #502314;
+      }
+    }
+  }
+}
+.likeToAdd {
+  font-size: 18px;
+  font-weight: bold;
+  color: #502314;
+  margin: 10px 0 !important;
+  text-align: left;
+}
+.supplements {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 10px;
+}
+.buttonBefore {
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: 1px solid #d9c9b6;
+  background-color: #f5ebdc;
+  margin: 0px 2px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.afterButtons {
+  button {
+    border-radius: 5px;
+    margin: 0px 5px;
+    border: 1px solid #502314;
+    background-color: #502314;
+    color: white;
+  }
+}
+.addToCardBlock {
+  margin-top: 30px;
+  button {
+    @extend .button1;
+  }
+  p {
+    span {
+      background-color: #ff8720;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-weight: bold;
+      color: #502314;
+    }
+  }
+}
+
+.supplementBlock {
+  background-color: #f8f1e6;
+  border-radius: 10px;
+  padding: 25px;
+  img {
+    width: 100%;
+  }
+  .title {
+    color: #502314;
+  }
+  .price {
+    color: #87604f;
+    font-weight: bold;
+  }
+}
+.supplementImage {
+  display: table-cell;
+  vertical-align: middle;
+  width: 90px;
+  height: 60px;
+}

@@ -1,0 +1,31 @@
+body {
+  background-color: #502314;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  grid-template-rows: 1fr;
+  width: 50vw;
+  margin: 0 auto;
+  margin-top: 20px;
+  grid-gap: 15px;
+}
+.wrapper {
+  padding: 15px;
+  background-color: #f5ebdc;
+  border-radius: 15px;
+}
+.bag {
+  padding: 15px;
+  background-color: #f5ebdc;
+  border-radius: 15px;
+}
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #502314;
+  text-align: center;
+  margin: 0px;
+  margin-bottom: 10px;
+}

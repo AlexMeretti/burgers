@@ -1,0 +1,29 @@
+.complete {
+  margin: 10px 0;
+  text-align: center;
+  p {
+    span {
+      background-color: #ff8720;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-weight: bold;
+      color: #502314;
+      font-size: 14px;
+    }
+  }
+  form {
+    text-align: center;
+    input {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 25px;
+      border-radius: 5px;
+      border: none;
+      background-color: white;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.block {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "image title"
+    "price supplements";
+  align-items: center;
+  column-gap: 5px;
+}
+.price {
+  grid-area: price;
+  text-align: center;
+  p {
+    margin: 0px;
+    span {
+      background-color: #ff8720;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-weight: bold;
+      color: #502314;
+      font-size: 12px;
+    }
+  }
+}
+.title {
+  grid-area: title;
+  text-align: left;
+  p {
+    font-weight: bold;
+    font-size: 16px;
+    color: #502314;
+    margin: 0px;
+  }
+}
+.image {
+  grid-area: image;
+  text-align: center;
+  align-self: center;
+  img {
+    width: 50px;
+  }
+}
+.supplements {
+  grid-area: supplements;
+  ul {
+    margin: 0px;
+    padding-left: 15px;
+    color: #502314;
+    li {
+      color: #5023149e;
+    }
+  }
+}

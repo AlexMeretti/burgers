@@ -15,25 +15,19 @@ const HamburgerPage = (props) => {
   const handleAddCutletIncrement = () => {
     if (countCutlet < 10) {
       setCountCutlet((prevValue) => prevValue + 1);
-      setPriceHamburgerTotal(
-        (prevValue) => prevValue + props.prices.supplements.Cutlet
-      );
+      setPriceHamburgerTotal((prevValue) => prevValue + props.priceCutlet);
     } else {
     }
   };
   const handleAddCutletDecrement = () => {
     setCountCutlet((prevValue) => (prevValue > 0 ? prevValue - 1 : 0));
-    setPriceHamburgerTotal(
-      (prevValue) => prevValue - props.prices.supplements.Cutlet
-    );
+    setPriceHamburgerTotal((prevValue) => prevValue - props.priceCutlet);
   };
 
   const handleAddCheeseIncrement = () => {
     if (countCheese < 10) {
       setCountCheese((prevValue) => prevValue + 1);
-      setPriceHamburgerTotal(
-        (prevValue) => prevValue + props.prices.supplements.Cheese
-      );
+      setPriceHamburgerTotal((prevValue) => prevValue + props.priceCheese);
     } else {
     }
   };
@@ -44,17 +38,13 @@ const HamburgerPage = (props) => {
   const handleAddCrispyOnionIncrement = () => {
     if (countCrispyOnion < 10) {
       setCountCrispyOnion((prevValue) => prevValue + 1);
-      setPriceHamburgerTotal(
-        (prevValue) => prevValue + props.prices.supplements.CrispyOnion
-      );
+      setPriceHamburgerTotal((prevValue) => prevValue + props.priceCrispyOnion);
     } else {
     }
   };
   const handleAddCrispyOnionDecrement = () => {
     setCountCrispyOnion((prevValue) => (prevValue > 0 ? prevValue - 1 : 0));
-    setPriceHamburgerTotal(
-      (prevValue) => prevValue - props.prices.supplements.CrispyOnion
-    );
+    setPriceHamburgerTotal((prevValue) => prevValue - props.priceCrispyOnion);
   };
 
   const supplementAddCoutlet = () => {
@@ -127,6 +117,7 @@ const HamburgerPage = (props) => {
   const handleClickAdd = () => {
     const countHamburger = {
       name: "Hamburger",
+      id: Math.random().toString(36).substring(2, 9),
       cutlet: countCutlet,
       cheese: countCheese,
       crispyOnion: countCrispyOnion,
@@ -154,7 +145,7 @@ const HamburgerPage = (props) => {
         </div>
         <div className={styles.price}>
           <p>
-            <span>{props.prices.Hamburger} $</span>
+            <span>{props.priceHamburger} $</span>
           </p>
         </div>
       </div>
@@ -165,7 +156,7 @@ const HamburgerPage = (props) => {
             <img src={cutlet} alt="cutlet" />
           </div>
           <p className={styles.title}>Cutlet</p>
-          <p className={styles.price}>{props.prices.supplements.Cutlet} $</p>
+          <p className={styles.price}>{props.priceCutlet} $</p>
           {supplementAddCoutlet()}
         </div>
         <div className={styles.supplementBlock}>
@@ -173,7 +164,7 @@ const HamburgerPage = (props) => {
             <img src={cheese} alt="cheese" />
           </div>
           <p className={styles.title}>Cheese</p>
-          <p className={styles.price}>{props.prices.supplements.Cheese} $</p>
+          <p className={styles.price}>{props.priceCheese} $</p>
           {supplementAddCheese()}
         </div>
         <div className={styles.supplementBlock}>
@@ -181,9 +172,7 @@ const HamburgerPage = (props) => {
             <img src={crispyOnion} alt="onion" />
           </div>
           <p className={styles.title}>Сrispy onion</p>
-          <p className={styles.price}>
-            {props.prices.supplements.CrispyOnion} $
-          </p>
+          <p className={styles.price}>{props.priceCrispyOnion} $</p>
           {supplementAddCrispyOnion()}
         </div>
       </div>

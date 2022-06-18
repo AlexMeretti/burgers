@@ -8,14 +8,14 @@ const MainPage = (props) => {
       id: "1",
       name: "Cheeseburger",
       link: "cheeseburger",
-      price: props.prices.Cheeseburger,
+      price: props.priceCheeseburger,
       image: cheeseburgerImg,
     },
     {
       id: "2",
       name: "Hamburger",
       link: "hamburger",
-      price: props.prices.Hamburger,
+      price: props.priceHamburger,
       image: hamburgerImg,
     },
   ];

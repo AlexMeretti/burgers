@@ -1,9 +1,10 @@
 import ElementBurger from "./ElementBurger";
 import styles from "./BurgerBagComplete.module.scss";
 const BurgerBagComplete = (props) => {
-  const elementBurgerMap = props.burgersMassive.map((el) => (
+  const elementBurgerMap = props.burgersArray.map((el) => (
     <ElementBurger
       name={el.name}
+      key={el.id}
       cheese={el.cheese}
       cutlet={el.cutlet}
       crispyOnion={el.crispyOnion}
@@ -15,11 +16,11 @@ const BurgerBagComplete = (props) => {
     event.preventDefault();
     const inputName = document.getElementById("inputName").value;
     alert(`Thx for your order, ${inputName}`);
-    props.completeOrder();
+    props.clearBug();
   };
 
   const finalPrice = () => {
-    const massive = props.burgersMassive.map((el) => {
+    const massive = props.burgersArray.map((el) => {
       return Number(el.burgerPrice);
     });
     const sumWithInitial = massive.reduce(

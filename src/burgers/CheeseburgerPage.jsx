@@ -6,7 +6,6 @@ import crispyOnion from "./supplements/crispyOnion.png";
 import { Link } from "react-router-dom";
 import styles from "./burgersPage.module.scss";
 const CheeseburgerPage = (props) => {
-  console.log(props);
   const [priceCheeseburgerTotal, setPriceCheeseburgerTotal] = useState(1.28);
   const [countCutlet, setCountCutlet] = useState(0);
   const [countCheese, setCountCheese] = useState(0);
@@ -16,25 +15,19 @@ const CheeseburgerPage = (props) => {
   const handleAddCutletIncrement = () => {
     if (countCutlet < 10) {
       setCountCutlet((prevValue) => prevValue + 1);
-      setPriceCheeseburgerTotal(
-        (prevValue) => prevValue + props.prices.supplements.Cutlet
-      );
+      setPriceCheeseburgerTotal((prevValue) => prevValue + props.priceCutlet);
     } else {
     }
   };
   const handleAddCutletDecrement = () => {
     setCountCutlet((prevValue) => (prevValue > 0 ? prevValue - 1 : 0));
-    setPriceCheeseburgerTotal(
-      (prevValue) => prevValue - props.prices.supplements.Cutlet
-    );
+    setPriceCheeseburgerTotal((prevValue) => prevValue - props.priceCutlet);
   };
 
   const handleAddCheeseIncrement = () => {
     if (countCheese < 10) {
       setCountCheese((prevValue) => prevValue + 1);
-      setPriceCheeseburgerTotal(
-        (prevValue) => prevValue + props.prices.supplements.Cheese
-      );
+      setPriceCheeseburgerTotal((prevValue) => prevValue + props.priceCheese);
     } else {
     }
   };
@@ -46,7 +39,7 @@ const CheeseburgerPage = (props) => {
     if (countCrispyOnion < 10) {
       setCountCrispyOnion((prevValue) => prevValue + 1);
       setPriceCheeseburgerTotal(
-        (prevValue) => prevValue + props.prices.supplements.CrispyOnion
+        (prevValue) => prevValue + props.priceCrispyOnion
       );
     } else {
     }
@@ -54,7 +47,7 @@ const CheeseburgerPage = (props) => {
   const handleAddCrispyOnionDecrement = () => {
     setCountCrispyOnion((prevValue) => (prevValue > 0 ? prevValue - 1 : 0));
     setPriceCheeseburgerTotal(
-      (prevValue) => prevValue - props.prices.supplements.CrispyOnion
+      (prevValue) => prevValue - props.priceCrispyOnion
     );
   };
 
@@ -128,6 +121,7 @@ const CheeseburgerPage = (props) => {
   const handleClickAdd = () => {
     const countCheeseburger = {
       name: "Cheeseburger",
+      id: Math.random().toString(36).substring(2, 9),
       cutlet: countCutlet,
       cheese: countCheese,
       crispyOnion: countCrispyOnion,
@@ -155,7 +149,7 @@ const CheeseburgerPage = (props) => {
         </div>
         <div className={styles.price}>
           <p>
-            <span>{props.prices.Cheeseburger} $</span>
+            <span>{props.priceCheeseburger} $</span>
           </p>
         </div>
       </div>
@@ -166,7 +160,7 @@ const CheeseburgerPage = (props) => {
             <img src={cutlet} alt="cutlet" />
           </div>
           <p className={styles.title}>Cutlet</p>
-          <p className={styles.price}>{props.prices.supplements.Cutlet} $</p>
+          <p className={styles.price}>{props.priceCutlet} $</p>
           {supplementAddCoutlet()}
         </div>
         <div className={styles.supplementBlock}>
@@ -174,7 +168,7 @@ const CheeseburgerPage = (props) => {
             <img src={cheese} alt="cheese" />
           </div>
           <p className={styles.title}>Cheese</p>
-          <p className={styles.price}>{props.prices.supplements.Cheese} $</p>
+          <p className={styles.price}>{props.priceCheese} $</p>
           {supplementAddCheese()}
         </div>
         <div className={styles.supplementBlock}>
@@ -182,9 +176,7 @@ const CheeseburgerPage = (props) => {
             <img src={crispyOnion} alt="onion" />
           </div>
           <p className={styles.title}>Сrispy onion</p>
-          <p className={styles.price}>
-            {props.prices.supplements.CrispyOnion} $
-          </p>
+          <p className={styles.price}>{props.priceCrispyOnion} $</p>
           {supplementAddCrispyOnion()}
         </div>
       </div>

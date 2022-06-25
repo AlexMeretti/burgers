@@ -4,9 +4,9 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: 8fr 4fr;
+  grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  width: 50vw;
+  width: 40vw;
   margin: 0 auto;
   margin-top: 20px;
   grid-gap: 15px;
@@ -20,6 +20,7 @@ body {
   padding: 15px;
   background-color: #f5ebdc;
   border-radius: 15px;
+  display: none;
 }
 .title {
   font-size: 24px;

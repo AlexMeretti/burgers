@@ -7,14 +7,13 @@ import styles from "./App.module.scss";
 import { useState, useEffect } from "react";
 const App = (props) => {
   const [burgersArray, setBurgersArray] = useState(
-    JSON.parse(localStorage.getItem("items")) || []
+    JSON.parse(localStorage.getItem("burgers")) || []
   );
   useEffect(() => {
-    localStorage.setItem("items", JSON.stringify(burgersArray));
+    localStorage.setItem("burgers", JSON.stringify(burgersArray));
   }, [burgersArray]);
 
   const burgerAdd = (object) => {
-    console.log(object);
     setBurgersArray([...burgersArray, object]);
   };
   const clearBug = () => {

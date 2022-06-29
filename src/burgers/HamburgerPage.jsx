@@ -11,7 +11,27 @@ const HamburgerPage = (props) => {
   const [countCheese, setCountCheese] = useState(0);
   const [countCrispyOnion, setCountCrispyOnion] = useState(0);
   const priceHamburgerTotalFixed = priceHamburgerTotal.toFixed(2);
-
+  const supplementCutletPrice = () => {
+    if (countCutlet === 0) {
+      return props.priceCutlet;
+    } else {
+      return countCutlet * props.priceCutlet;
+    }
+  };
+  const supplementCheesePrice = () => {
+    if (countCheese === 0) {
+      return props.priceCheese;
+    } else {
+      return countCheese * props.priceCheese;
+    }
+  };
+  const supplementCrispyOnionPrice = () => {
+    if (countCrispyOnion === 0) {
+      return props.priceCrispyOnion;
+    } else {
+      return countCrispyOnion * props.priceCrispyOnion;
+    }
+  };
   const handleAddCutletIncrement = () => {
     if (countCutlet < 10) {
       setCountCutlet((prevValue) => prevValue + 1);
@@ -116,8 +136,8 @@ const HamburgerPage = (props) => {
 
   const handleClickAdd = () => {
     const countHamburger = {
-      name: "Hamburger",
       id: Math.random().toString(36).substring(2, 9),
+      name: "Hamburger",
       cutlet: countCutlet,
       cheese: countCheese,
       crispyOnion: countCrispyOnion,
@@ -156,7 +176,7 @@ const HamburgerPage = (props) => {
             <img src={cutlet} alt="cutlet" />
           </div>
           <p className={styles.title}>Cutlet</p>
-          <p className={styles.price}>{props.priceCutlet} $</p>
+          <p className={styles.price}>{supplementCutletPrice().toFixed(2)} $</p>
           {supplementAddCoutlet()}
         </div>
         <div className={styles.supplementBlock}>
@@ -164,7 +184,7 @@ const HamburgerPage = (props) => {
             <img src={cheese} alt="cheese" />
           </div>
           <p className={styles.title}>Cheese</p>
-          <p className={styles.price}>{props.priceCheese} $</p>
+          <p className={styles.price}>{supplementCheesePrice().toFixed(2)} $</p>
           {supplementAddCheese()}
         </div>
         <div className={styles.supplementBlock}>
@@ -172,7 +192,9 @@ const HamburgerPage = (props) => {
             <img src={crispyOnion} alt="onion" />
           </div>
           <p className={styles.title}>Сrispy onion</p>
-          <p className={styles.price}>{props.priceCrispyOnion} $</p>
+          <p className={styles.price}>
+            {supplementCrispyOnionPrice().toFixed(2)} $
+          </p>
           {supplementAddCrispyOnion()}
         </div>
       </div>

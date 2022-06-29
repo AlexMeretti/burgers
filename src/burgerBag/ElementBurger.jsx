@@ -21,6 +21,9 @@ const ElementBurger = (props) => {
           <li>crispyOnion: {props.crispyOnion}</li>
         </ul>
       </div>
+      <div className={styles.remove}>
+        <button onClick={() => props.removeBurger(props.id)}>X</button>
+      </div>
     </div>
   );
 };

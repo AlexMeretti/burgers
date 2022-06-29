@@ -1,5 +1,5 @@
 body {
-  background-color: #502314;
+  background-color: #f5ebdc;
 }
 
 .grid {
@@ -12,9 +12,40 @@ body {
   grid-gap: 15px;
 }
 .wrapper {
-  padding: 15px;
-  background-color: #f5ebdc;
+  background-color: rgb(239, 225, 204);
   border-radius: 15px;
+  position: relative;
+  padding: 15px;
+}
+.cart {
+  position: absolute;
+  top: 0px;
+  right: -80px;
+  padding: 5px 15px;
+  background-color: rgb(214, 35, 0);
+  border-radius: 10px;
+  text-align: center;
+  img {
+    width: 30px;
+    height: 30px;
+  }
+  p {
+    font-weight: bold;
+    color: #f5ebdc;
+    margin: 0px;
+  }
+  a {
+    color: #f5ebdc;
+    text-decoration: none;
+  }
+}
+.noActiveCart {
+  opacity: 0.5;
+  a {
+    &:hover {
+      cursor: auto;
+    }
+  }
 }
 .bag {
   padding: 15px;

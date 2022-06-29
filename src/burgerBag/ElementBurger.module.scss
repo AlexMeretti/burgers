@@ -1,9 +1,8 @@
 .block {
-  background-color: #ffffff;
+  background-color: #f8f1e6;
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 0;
   color: white;
-  margin-bottom: 10px;
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: auto;
@@ -12,6 +11,27 @@
     "price supplements";
   align-items: center;
   column-gap: 5px;
+  width: 100%;
+  position: relative;
+}
+.remove {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #502314;
+  font-size: 14px;
+  button {
+    background: #efe1cc;
+    border: 1px solid #efe1cc;
+    border-radius: 5px;
+    padding: 5px 5px;
+    transition: 0.3s;
+    &:hover {
+      cursor: pointer;
+      background-color: #502314;
+      color: #f5ebdc;
+    }
+  }
 }
 .price {
   grid-area: price;

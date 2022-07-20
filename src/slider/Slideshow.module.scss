@@ -1,0 +1,13 @@
+.slideshow {
+  margin: 15px 0;
+  text-align: center;
+  .image {
+    display: inline-block;
+    width: 30vw;
+    img {
+      width: 100%;
+      border-radius: 15px;
+      border: 5px solid #efe1cc;
+    }
+  }
+}

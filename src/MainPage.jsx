@@ -2,6 +2,7 @@ import MainPageBurger from "./MainPageBurger";
 import cheeseburgerImg from "./burgers/burgersImages/cheeseburger.png";
 import hamburgerImg from "./burgers/burgersImages/hamburger.png";
 import styles from "./MainPage.module.scss";
+import Slideshow from "./slider/Slideshow";
 const MainPage = (props) => {
   const burgers = [
     {
@@ -29,10 +30,13 @@ const MainPage = (props) => {
     />
   ));
   return (
-    <div className={styles.block}>
-      <div className={styles.title}>Menu</div>
-      <div className={styles.grid}>{burgersIndex}</div>
-    </div>
+    <>
+      <Slideshow />
+      <div className={styles.block}>
+        <div className={styles.title}>Menu</div>
+        <div className={styles.grid}>{burgersIndex}</div>
+      </div>
+    </>
   );
 };
 

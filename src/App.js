@@ -6,6 +6,7 @@ import BurgerBag from "./burgerBag/BurgerBag";
 import styles from "./App.module.scss";
 import { useState, useEffect } from "react";
 import cart from "./cart.png";
+import Slideshow from "./slider/Slideshow";
 const App = (props) => {
   const [burgersArray, setBurgersArray] = useState(
     JSON.parse(localStorage.getItem("burgers")) || []

@@ -3,13 +3,9 @@ body {
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
   width: 40vw;
   margin: 0 auto;
   margin-top: 20px;
-  grid-gap: 15px;
 }
 .wrapper {
   background-color: rgb(239, 225, 204);

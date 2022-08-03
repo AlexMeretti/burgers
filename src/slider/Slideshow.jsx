@@ -42,7 +42,7 @@ const Slideshow = () => {
   return (
     <div className={styles.slideshow}>
       <div className={styles.image}>
-        <img id="image" alt="alt" src={activeSlidePath} />
+        <img alt="alt" src={activeSlidePath} />
       </div>
       <div className={styles.sliderDottes}>{dottesCreate()}</div>
     </div>

@@ -1,0 +1,48 @@
+.header {
+  margin: 15px 0;
+}
+@media (max-width: 576px) {
+  .header {
+    margin: 15px 30px;
+  }
+}
+.cart {
+  background-color: #d62300;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 5px 10px;
+  text-align: center;
+  img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+  }
+  span {
+    font-weight: bold;
+    color: #f5ebdc;
+    margin: 0px;
+    vertical-align: middle;
+  }
+  a {
+    color: #f5ebdc;
+    text-decoration: none;
+  }
+}
+.noActiveCart {
+  opacity: 0.5;
+  a {
+    &:hover {
+      cursor: auto;
+    }
+  }
+}
+.bag {
+  padding: 15px;
+  background-color: #f5ebdc;
+  border-radius: 15px;
+  display: none;
+}
+.auth {
+  display: inline-block;
+  float: right;
+}

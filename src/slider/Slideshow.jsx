@@ -13,12 +13,11 @@ const Slideshow = () => {
     { id: fnGetId(), img: slide3, active: false },
   ]);
   let activeSlidePath = "";
-  const activeSlide = () => {
+  (function setActiveSlide() {
     slidesArray.map((slide) =>
       slide.active === true ? (activeSlidePath = slide.img) : slide
     );
-  };
-  activeSlide();
+  })();
   const radioOnChange = (eventObject) => {
     setSlidesArray(
       slidesArray.map((slide) =>

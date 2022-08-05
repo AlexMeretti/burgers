@@ -1,7 +1,12 @@
 import styles from "./BurgerBag.module.scss";
 import { Link } from "react-router-dom";
 import ElementBurger from "./ElementBurger";
+import { useState } from "react";
 const BurgerBag = (props) => {
+  const [name, setName] = useState("Stranger");
+  const onChangeName = (e) => {
+    setName(e.currentTarget.value);
+  };
   const elementBurgerMap = props.burgersArray.map((el) => (
     <ElementBurger
       name={el.name}
@@ -15,13 +20,11 @@ const BurgerBag = (props) => {
       removeBurger={props.removeBurger}
     />
   ));
-  const sendBag = (event) => {
+  const submitBag = (event) => {
     event.preventDefault();
-    const inputName = document.getElementById("inputName").value;
-    alert(`Thx for your order, ${inputName}`);
+    alert(`Thx for your order, ${name}`);
     props.clearCart();
   };
-
   const finalPrice = () => {
     const massive = props.burgersArray.map((el) => {
       return Number(el.burgerPrice);
@@ -42,9 +45,10 @@ const BurgerBag = (props) => {
           <input
             id="inputName"
             placeholder="Enter name"
-            required="required"
+            value={name}
+            onChange={onChangeName}
           ></input>
-          <button onClick={sendBag}>Send</button>
+          <button onClick={submitBag}>Send</button>
         </form>
       </div>
     );

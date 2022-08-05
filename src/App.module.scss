@@ -3,9 +3,15 @@ body {
 }
 
 .grid {
-  width: 40vw;
+  width: 500px;
   margin: 0 auto;
   margin-top: 20px;
+}
+@media (max-width: 576px) {
+  .grid {
+    width: 100%;
+    margin-top: 0px;
+  }
 }
 .wrapper {
   background-color: rgb(239, 225, 204);
@@ -14,13 +20,8 @@ body {
   padding: 15px;
 }
 .cart {
-  position: absolute;
-  top: 0px;
-  right: -80px;
-  padding: 5px 15px;
   background-color: rgb(214, 35, 0);
   border-radius: 10px;
-  text-align: center;
   img {
     width: 30px;
     height: 30px;

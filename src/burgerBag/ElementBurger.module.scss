@@ -14,6 +14,14 @@
   width: 100%;
   position: relative;
 }
+@media (max-width: 576px) {
+  .block {
+    grid-template-areas:
+      "title supplements"
+      "image supplements"
+      "price supplements";
+  }
+}
 .remove {
   position: absolute;
   right: 10px;
@@ -56,6 +64,11 @@
     font-size: 16px;
     color: #502314;
     margin: 0px;
+  }
+}
+@media (max-width: 576px) {
+  .title {
+    text-align: center;
   }
 }
 .image {

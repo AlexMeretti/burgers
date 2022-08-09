@@ -33,6 +33,15 @@
   grid-auto-rows: auto;
   grid-gap: 15px;
 }
+@media (max-width: 576px) {
+  .content {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    grid-gap: 15px;
+  }
+}
 .complete {
   margin: 10px 0;
   text-align: center;
